@@ -6,18 +6,18 @@ document.addEventListener("DOMContentLoaded", function() {
 
   const displayBooks = (array) => {
     const container = document.getElementById('books-container');
-    container.innerHTML = "<h2>Top 5 Hardcover Bestsellers</h2>";
+    container.innerHTML = "<h2>Top 5 Hardcover Best Sellers Books</h2>";
   
     let top5 = array.results.books.filter(book => book.rank <= 5);
     top5.forEach(book => {
-      //console.log(book);
-  
+      console.log(book)
       let liElement = document.createElement('li');
       liElement.innerHTML = `
       <img src="${book.book_image}">
       <div>
-        <h5>${book.title} by ${book.author} </h5>
+        <h5>${book.title}</h5>
         <p>${book.description}</p>
+        <h6>by ${book.author}</h6>
       </div>`;
       container.appendChild(liElement);
     });
